@@ -2,17 +2,21 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello World! | AnonymousCY</title>
+<title>关于map与unordered_map的用法及其他 | AnonymousCY</title>
 <link rel="shortcut icon" href="https://anonymouswyh.github.io//favicon.ico?v=1600831950326">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://anonymouswyh.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Hello World! | AnonymousCY - Atom Feed" href="https://anonymouswyh.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="关于map与unordered_map的用法及其他 | AnonymousCY - Atom Feed" href="https://anonymouswyh.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="hello world!
-" />
+    <meta name="description" content="首先在C++中使用需要：
+1. #include&lt;tr1/unordered_map&gt;
+2. using namespace std::tr1;
+
+一：查找元素是否存在
+有unordered_map&lt;int, int&gt..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -75,30 +79,93 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello World!
+              关于map与unordered_map的用法及其他
             </h2>
             <div class="post-info">
               <span>
-                2020-09-21
+                2020-09-22
               </span>
               <span>
-                1 min read
+                2 min read
               </span>
               
             </div>
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>hello world!</p>
+                <p>首先在C++中使用需要：</p>
+<pre><code>1. #include&lt;tr1/unordered_map&gt;
+2. using namespace std::tr1;
+</code></pre>
+<h3 id="一查找元素是否存在">一：查找元素是否存在</h3>
+<pre><code>有unordered_map&lt;int, int&gt; mp;  要查找x是否在map中：
+1. mp.find(x)! = mp.end()
+2. mp.count(x)! = 0
+</code></pre>
+<h3 id="二插入数据">二：插入数据</h3>
+<pre><code>mp[x] = 1;
+又或： mp.insert(pair&lt;int, int&gt;(x, 1))
+</code></pre>
+<p>以上为我所了解到的unordered_map的用法，然后与map相比：<br>
+map：<br>
+优点：<br>
+1. 有序性。其元素为有序排列。<br>
+2. 红黑树。使得效率高。<br>
+缺点：<br>
+由于建立红黑树使得空间占有率高。</p>
+<p>unordered_map:<br>
+优点：由于其内部实现了哈希表，所以加快了查找效率。<br>
+缺点：哈希表的建立会比较耗费时间。</p>
+<p>总结：</p>
+<ol>
+<li>map适用于对顺序有要求的问题中；而unordered_map对于查找问题会更加高效。</li>
+<li>unordered_map占有内存更多，但同时执行效率更高。</li>
+</ol>
+<h3 id="另外关于hash的一些tips">另外关于hash的一些tips：</h3>
+<p>存在一个hash函数：index = H(key)<br>
+即根据函数与关键字key可以直接找到查找值所在位置。<br>
+而取出关键字的方法有很多：如数字分析法，平方取中法，折叠法，除留余数法。</p>
+<h3 id="然后关于cstl的一些tips">然后关于C++STL的一些tips：</h3>
+<ol>
+<li>size_t = unsigned int</li>
+<li>vector可以被认为是一个动态数组。</li>
+<li>v.size()取数组的大小；count(v.begin(), v.end(), x)用来统计x在v序列中出现的次数，v.count(x)同理；</li>
+<li>v.push_back()为在v后面加入一个数据，如果加入的元素大于了capacity，就重新分配一个比原来capacity大两倍的内存。</li>
+<li>string a, b; a = b.insert(4, 5 ,'x') 为a变为b在第四号位置加入5个x。</li>
+</ol>
+<p>以上想法来自于一道<a href="https://leetcode.com/problems/two-sum/submissions/">easy的题目</a>，供以后复习时参考。</p>
 
               </div>
               <div class="toc-container">
-                
+                <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E4%B8%80%E6%9F%A5%E6%89%BE%E5%85%83%E7%B4%A0%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8">一：查找元素是否存在</a></li>
+<li><a href="#%E4%BA%8C%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE">二：插入数据</a></li>
+<li><a href="#%E5%8F%A6%E5%A4%96%E5%85%B3%E4%BA%8Ehash%E7%9A%84%E4%B8%80%E4%BA%9Btips">另外关于hash的一些tips：</a></li>
+<li><a href="#%E7%84%B6%E5%90%8E%E5%85%B3%E4%BA%8Ecstl%E7%9A%84%E4%B8%80%E4%BA%9Btips">然后关于C++STL的一些tips：</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
               </div>
             </div>
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://anonymouswyh.github.io/post/hello-world/">
+              <h3 class="post-title">
+                Hello World!
+              </h3>
+            </a>
+          </div>
         
 
         
