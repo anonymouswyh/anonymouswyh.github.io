@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://anonymouswyh.github.io/</id>
     <title>AnonymousCY</title>
-    <updated>2020-09-23T03:32:43.785Z</updated>
+    <updated>2020-10-07T15:22:20.001Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://anonymouswyh.github.io/"/>
     <link rel="self" href="https://anonymouswyh.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://anonymouswyh.github.io/images/avatar.png</logo>
     <icon>https://anonymouswyh.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, AnonymousCY</rights>
+    <entry>
+        <title type="html"><![CDATA[指针的指针]]></title>
+        <id>https://anonymouswyh.github.io/post/zhi-zhen-de-zhi-zhen/</id>
+        <link href="https://anonymouswyh.github.io/post/zhi-zhen-de-zhi-zhen/">
+        </link>
+        <updated>2020-10-06T08:23:38.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[关于map与unordered_map的用法及其他]]></title>
         <id>https://anonymouswyh.github.io/post/guan-yu-map-yu-unordered_map-de-yong-fa-ji-qi-ta/</id>

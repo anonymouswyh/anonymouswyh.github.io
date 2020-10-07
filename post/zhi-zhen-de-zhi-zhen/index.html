@@ -2,17 +2,19 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Hello World! | AnonymousCY</title>
+<title>指针的指针 | AnonymousCY</title>
 <link rel="shortcut icon" href="https://anonymouswyh.github.io//favicon.ico?v=1602084135626">
 <link href="https://cdn.jsdelivr.net/npm/remixicon@2.3.0/fonts/remixicon.css" rel="stylesheet">
 <link rel="stylesheet" href="https://anonymouswyh.github.io//styles/main.css">
-<link rel="alternate" type="application/atom+xml" title="Hello World! | AnonymousCY - Atom Feed" href="https://anonymouswyh.github.io//atom.xml">
+<link rel="alternate" type="application/atom+xml" title="指针的指针 | AnonymousCY - Atom Feed" href="https://anonymouswyh.github.io//atom.xml">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Droid+Serif:400,700">
 
 
 
-    <meta name="description" content="hello world!
-" />
+    <meta name="description" content="指向指针的指针：
+int a = 10; //a的地址表示为&amp;a
+int *P = &amp;a; //p的地址表示为&amp;p，p = &amp;a
+int **pp = &amp;p //pp的地址为&amp;pp，因为&am..." />
     <meta name="keywords" content="" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
     <script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
@@ -75,11 +77,11 @@
         <div class="post-detail">
           <article class="post">
             <h2 class="post-title">
-              Hello World!
+              指针的指针
             </h2>
             <div class="post-info">
               <span>
-                2020-09-21
+                2020-10-06
               </span>
               <span>
                 1 min read
@@ -89,7 +91,14 @@
             
             <div class="post-content-wrapper">
               <div class="post-content">
-                <p>hello world!</p>
+                <p>指向指针的指针：</p>
+<pre><code>int a = 10; //a的地址表示为&amp;a
+int *P = &amp;a; //p的地址表示为&amp;p，p = &amp;a
+int **pp = &amp;p //pp的地址为&amp;pp，因为&amp;pp内储存的是p的地址，则*pp直接指向指针p
+</code></pre>
+<p>还有就是new加指针代称代表直接赋值，就如：</p>
+<pre><code>(*node)=new ListNode(sum%10);
+</code></pre>
 
               </div>
               <div class="toc-container">
@@ -99,6 +108,15 @@
           </article>
         </div>
 
+        
+          <div class="next-post">
+            <div class="next">下一篇</div>
+            <a href="https://anonymouswyh.github.io/post/guan-yu-map-yu-unordered_map-de-yong-fa-ji-qi-ta/">
+              <h3 class="post-title">
+                关于map与unordered_map的用法及其他
+              </h3>
+            </a>
+          </div>
         
 
         
